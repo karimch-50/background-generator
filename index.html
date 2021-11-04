@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Background Generator</h1>
+    <input type="color" class="color1" name="color1" value="#00ff00">
+    <input type="color" class="color2" name="color2" value="#ff0000">
+    <h2>Current CSS Background</h2>
+    <h3></h3>
+
+    <script type="text/javascript" >
+        var css = document.querySelector("h3");
+        var color1= document.querySelector(".color1");
+        var color2= document.querySelector(".color2");
+        var body = document.querySelector('body');
+        
+        function SetGredeint(){
+            body.style.background="linear-gradient(to right, "+color1.value+","+color2.value+")";
+            css.innerText = body.style.background;
+        }
+        color1.addEventListener("input",SetGredeint)
+        color2.addEventListener("input",SetGredeint)
+    </script>
+</body>
+</html>
